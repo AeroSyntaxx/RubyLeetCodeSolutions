@@ -30,13 +30,17 @@ Both strings consists only of lowercase characters.
 def is_subsequence(s, t)
     return true if s.empty?
     return false if t.empty? or s.length > t.length    
-    
+
     s_ptr = 0
     t_ptr = 0
+    s_arr = s.chars
+    t_arr = t.chars
+    s_len = s_arr.length
+    t_len = t_arr.length
 
-    while t_ptr < t.length and s_ptr < s.length
-        if t[t_ptr] == s[s_ptr] then
-            return true if s_ptr == s.length - 1   
+    while t_ptr < t_len and s_ptr < s_len
+        if t_arr[t_ptr] == s_arr[s_ptr] then
+            return true if s_ptr == s_len - 1   
             s_ptr = s_ptr.next
         end
         
